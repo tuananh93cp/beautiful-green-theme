@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌿 Beautiful Green Theme
 
 Một extension trình duyệt tuyệt đẹp giúp thay đổi giao diện các trang web với theme màu xanh lá cây sang trọng và hiện đại.
@@ -137,3 +138,7 @@ Nếu thích extension này, hãy:
 **Tác giả:** XMP  
 **Email:** lanhanh64529@gmail.com  
 **Website:** https://github.com/tuananh93cp 
+=======
+# beautiful-green-theme
+Beautiful Green Theme Extension for Chrome and Firefox
+>>>>>>> 96d8e179ec72d52baf3338868c127224ebe32e58
