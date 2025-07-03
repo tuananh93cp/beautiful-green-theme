@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .size-group { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Beautiful Green Theme - Icon Generator</h1>
+    
+    <div class="size-group">
+        <h3>16x16 Icon</h3>
+        <canvas id="canvas16" width="16" height="16"></canvas>
+        <button onclick="downloadIcon('canvas16', 'icon16.png')">Download 16x16</button>
+    </div>
+    
+    <div class="size-group">
+        <h3>48x48 Icon</h3>
+        <canvas id="canvas48" width="48" height="48"></canvas>
+        <button onclick="downloadIcon('canvas48', 'icon48.png')">Download 48x48</button>
+    </div>
+    
+    <div class="size-group">
+        <h3>128x128 Icon</h3>
+        <canvas id="canvas128" width="128" height="128"></canvas>
+        <button onclick="downloadIcon('canvas128', 'icon128.png')">Download 128x128</button>
+    </div>
+    
+    <script>
+        // Create gradient and draw icons
+        function drawIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#66bb6a');
+            gradient.addColorStop(0.5, '#4caf50');
+            gradient.addColorStop(1, '#43a047');
+            
+            // Draw background circle
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw leaf shape
+            ctx.fillStyle = 'rgba(255,255,255,0.9)';
+            ctx.beginPath();
+            const centerX = size/2;
+            const centerY = size/2;
+            const leafHeight = size * 0.6;
+            const leafWidth = size * 0.3;
+            
+            // Simple leaf shape
+            ctx.moveTo(centerX, centerY - leafHeight/2);
+            ctx.quadraticCurveTo(centerX - leafWidth/2, centerY, centerX, centerY + leafHeight/2);
+            ctx.quadraticCurveTo(centerX + leafWidth/2, centerY, centerX, centerY - leafHeight/2);
+            ctx.fill();
+            
+            // Draw stem
+            ctx.fillStyle = 'rgba(255,255,255,0.7)';
+            ctx.fillRect(centerX - 1, centerY + leafHeight/4, 2, size * 0.15);
+        }
+        
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Draw all icons when page loads
+        window.onload = function() {
+            drawIcon('canvas16', 16);
+            drawIcon('canvas48', 48);
+            drawIcon('canvas128', 128);
+        };
+    </script>
+</body>
+</html> 

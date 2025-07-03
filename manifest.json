@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Beautiful Green Theme",
+  "version": "1.0.0",
+  "description": "Thay đổi giao diện trình duyệt với theme xanh lá cây đẹp mắt",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Beautiful Green Theme"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles/theme.css"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*", "styles/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "author": "XMP",
+  "homepage_url": "https://github.com/tuananh93cp/beautiful-green-theme"
+} 

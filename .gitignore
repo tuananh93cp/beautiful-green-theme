@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+
+# ZIP packages
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files
+.env
+.env.local
+
+# Cache
+.cache/
+
+# Test coverage
+coverage/ 

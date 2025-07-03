@@ -1,0 +1,44 @@
+{
+  "name": "beautiful-green-theme",
+  "version": "1.0.0",
+  "description": "A beautiful green nature theme extension for browsers",
+  "main": "content-script.js",
+  "scripts": {
+    "build": "powershell -ExecutionPolicy RemoteSigned -File build.ps1",
+    "test": "echo \"Extension ready for testing\"",
+    "zip-chrome": "powershell \"Compress-Archive -Path 'build/chrome/*' -DestinationPath 'beautiful-green-theme-chrome.zip' -Force\"",
+    "zip-firefox": "powershell \"Compress-Archive -Path 'build/firefox/*' -DestinationPath 'beautiful-green-theme-firefox.zip' -Force\""
+  },
+  "keywords": [
+    "browser-extension",
+    "theme",
+    "green",
+    "nature",
+    "chrome-extension",
+    "firefox-addon",
+    "web-styling",
+    "css-theme"
+  ],
+  "author": {
+    "name": "XMP",
+    "email": "lanhanh64529@gmail.com",
+    "url": "https://github.com/tuananh93cp"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuananh93cp/beautiful-green-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tuananh93cp/beautiful-green-theme/issues"
+  },
+  "homepage": "https://github.com/tuananh93cp/beautiful-green-theme#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "Chrome >= 88",
+    "Firefox >= 78",
+    "Edge >= 88"
+  ]
+} 
